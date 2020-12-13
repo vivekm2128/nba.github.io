@@ -4911,10 +4911,10 @@ span.bp3-icon:empty{
   content:"⌄"; }
 
 .bp3-icon-caret-left::before{
-  content:"〈"; }
+  content:"〈"; }
 
 .bp3-icon-caret-right::before{
-  content:"〉"; }
+  content:"〉"; }
 
 .bp3-icon-caret-up::before{
   content:"⌃"; }
@@ -14250,6 +14250,43 @@ a.anchor-link {
     init_mathjax();
     </script>
     <!-- End of mathjax configuration --></head>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><center></p>
+<p><img src="https://pbs.twimg.com/media/CEH2HCRUEAEp8m5.jpg" alt="Drawing" style="width: 700px;"></center></p>
+<p><center></p>
+<p><h1 style="font-size:36px;">How Height has effected Win % in 1980 and 2020</h1></p>
+<p><h4>
+by Vivek Mantha</h4></p>
+<p><hr></p>
+<p><h1>Introduction</h1>
+</center></p>
+<body><p>
+The game of professional basketball has changed greatly throughout the years. Throughout history it has been generalized that basketball is a game meant for people who are tall. However, the introduction of the 3 point line and rules to make the game less physical have made it easier for smaller players to excel. 3 pointers being worth more than 2s caused teams to shoot  more 3s and draft more players that shoot 3s. A player’s height then becomes less relevant if they are a good 3 point shooter. The 2016 MVP Steph Curry was only 6 foot 2; but, his ability to shoot the 3 and the fact that the league was less physical allowed him to excel despite his height. In the 1980s a player of his size would have a lot more trouble due to how physical the league was and how the game was played closer to the basket.  The objective of my project is to illustrate the difference between the effect of height on win percentage in the year 1980 and the year 2020. Has ‘small ball’ really taken over the nba? 
+<hr>
+<center><h1>Scraping and Processing the Data</h1></center>
+<body><p>
+The first step is to get the average height of each NBA team along with their win percentage. I used the ‘requests get’ function on a url that contains the table with my desired data. The first parameter of the request get function is that url while the second parameter contains my headers to bypass any security preferences. When performing the get function a website expects a valid user agent which is why I have my mac user agent in my headers array. The request get function returns the data from the url in html format. Beautiful soup is then used to convert the data into a more readable format where the beautiful soup function ‘find’ is used with ‘prettify’ to locate the table. Prettify() allows us to use the ‘table’ keyword to find the table. I then use pandas read html function to convert this table into a pandas data frame. This process is repeated for every single team in the year 2020 and the year 1980. Unfortunately data on teams heights are in separate tables so I had to do a request for every team. This is not exactly the best practice and I would not have done it this way if I had all my data in one table. Here are some helpful links:
+<br>
+<a href="https://nbviewer.jupyter.org/github/jvns/pandas-cookbook/blob/v0.1/cookbook/Chapter%201%20-%20Reading%20from%20a%20CSV.ipynb" style="color:red;">Pandas Scraping</a>
+<br>
+<a href="https://nbviewer.jupyter.org/github/jvns/pandas-cookbook/blob/v0.1/cookbook/Chapter%202%20-%20Selecting%20data%20&%20finding%20the%20most%20common%20complaint%20type.ipynb" style="color:red;">Pandas Array Slicing</a>
+<br>
+<a href="https://numpy.org/doc/stable/contents.html" style="color:red;">Numpy Documentation</a>
+<br>
+Once I have my data in a pandas data frame I can access the heights of any specific team by the column name ‘Ht’. For each team I convert the Heights into inches in a method which returns an array player heights in inches. I then use the numpy mean function to get the mean of that array and that gives me my x values aka the average height for each team. The y value is a team's win percentage which I input manually from basketball reference since there is no need to scrape this from any table. For every single team I append their average height to an array of my x values and their corresponding win percentage to an array of y values. I now have the average height for each team in 1980 and 2020 and a corresponding win percentage array for each team in 1980 and 2020.
+<hr>
+</body>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
 <body class="jp-Notebook" data-jp-theme-light="true" data-jp-theme-name="JupyterLab Light">
 <div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
@@ -15017,6 +15054,31 @@ a.anchor-link {
 </div>
 </div>
 </div>
+ 
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><center></p>
+<hr>
+<p><h1>Exploring The Data</h1>
+</center></p>
+<body><p>
+Before analyzing the relationship between height and win percentage I illustrate the distributions of height and win percentage. I do this by making 2 violin plots. Seaborn is a Python data visualization library based on matplotlib. It makes it simple and easy to make a violin plot. I also use matplotlib's plt.figure to seperate the two plots. Here are some helpful links:
+<br>
+<a href="https://seaborn.pydata.org/generated/seaborn.violinplot.html" style="color:blue;">Seaborn Violin Plot</a>
+<br>
+<a href="https://www.kite.com/python/answers/how-to-show-two-figures-at-once-in-matplotlib-in-python"  style="color:blue;">Multiple Plots</a>
+<hr>
+</body>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
@@ -17478,6 +17540,27 @@ z
 </div>
 
 </div>
+ 
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p><center></p>
+<hr>
+<p><h1>Exploring The Data Analysis</h1>
+</center></p>
+<body><p>
+The first violin plot shows the distribution of heights in the year 1980 and the year 2020. Height is more evenly distributed in the year 1980 while in the year 2020 much more teams have heights closer to the mean. Additionally, the tallest team in 2020 is taller than the tallest team in 1980. The mean height for both years are very close to each other. In 1980 the teams win % is more distributed to the bottom while in 2020 the win percentage is more evenly distributed. Based on these distributions, it may be expected that in 2020 a smaller average height could lead to a higher win percentage because the distribution of heights is closer to the median. In 1980, we have an even height distribution but many teams have a below average win percentage. This could go either way depending on the heights of the teams with low win percentage. Based on my small ball hypothesis, I still expect win percentage to go up when height goes up in 1980 and the opposite for the year 2020. 
+<hr>
+</body>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[1]:</div>
+<div class="inner_cell">
+    <div class="input_area">
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
