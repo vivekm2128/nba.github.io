@@ -17558,11 +17558,25 @@ will take on the given value while the thinner sections represent a lower probab
 The first violin plot shows the distribution of heights in the year 1980 and the year 2020. 
 Height is more evenly distributed in the year 1980 across the interquartile range, while in the year 2020 much more teams have heights closer to the median as represented by the wider section of the 2020 height violin plot. 
 Additionally, the tallest team in 2020 is taller than the tallest team in 1980 and the median height for 2020 is also slightly higher than the median height for 1980. Both teams outliars, represented by the two ends of each violin plot are around the same.
-In 1980, the teams win % is more distributed closer to the median and above it while in 2020 the win percentage is more evenly distributed.  
+In 1980, the teams win % is more distributed closer to the median and above it while in 2020 the win percentage is more evenly distributed. To add on, the min win % in 1980 is lower than the min win % in 2020 and the max win % in 1980 is greater than the max win % in 2020 as represented by the ends of the violin plots.
 In 1980, since height is manly distributed closer to and above the median and many of the teams in 1980 have similar win %'s, those teams with heigher win percentages could be taller than the teams with lower win percentages. This would lead me to believe that height may have 
 more of an effect on win percentage in 1980 than in 2020. In 2020, the fact that the teams heights are closer together and win percentage
 is more evenly distrubted means that teams with heights closer to each other have a higher chance of having different win percentage.  
-
+<hr>
+<br>
+<p><center></p>
+<hr>
+<p><h1>Linear Regrssion Setup</h1>
+</center></p>    
+I have all the teams heights in my height1980 and height2020 arrays and their corresponding win percentages in my winpct1980 and winpct2020 arrays so make a 1980 and 2020 win % vs height plot 
+and add a regression line to it. 
+Data is just numbers until you find a way to derive meaning from it. 
+One way to do this is through linear regression. Ordinary Least Squares(OLS) is one way to get a linear regression line from a set of points. OLS can estimate 
+parameters a,b in the equation: y = a + bx by minimizing the sum of squared residuals. A residual is the difference the mean value that a model predicts and the
+actual observed value. This link can help:
+<br>
+<a href="https://setosa.io/ev/ordinary-least-squares-regression/" style="color:red;">OLS Visualization</a>
+<br>
 <hr>
 </body>
 </div>
