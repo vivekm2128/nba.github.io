@@ -14265,6 +14265,7 @@ by Vivek Mantha</h4></p>
 </center></p>
 <body><p>
 The game of professional basketball has changed greatly throughout the years. Throughout history it has been generalized that basketball is a game meant for people who are tall. However, the introduction of the 3 point line and rules to make the game less physical have made it easier for smaller players to excel. 3 pointers being worth more than 2s caused teams to shoot  more 3s and draft more players that shoot 3s. A player’s height then becomes less relevant if they are a good 3 point shooter. The 2016 MVP Steph Curry was only 6 foot 2; but, his ability to shoot the 3 and the fact that the league was less physical allowed him to excel despite his height. In the 1980s a player of his size would have a lot more trouble due to how physical the league was and how the game was played closer to the basket.  The objective of my project is to illustrate the difference between the effect of height on win percentage in the year 1980 and the year 2020. Has ‘small ball’ really taken over the nba? 
+<br>
 <hr>
 <center><h1>Scraping and Processing the Data</h1></center>
 <body><p>
@@ -15059,6 +15060,7 @@ Once I have my data in a pandas data frame I can access the heights of any speci
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><center></p>
+<br>
 <hr>
 <p><h1>Exploring The Data</h1>
 </center></p>
@@ -17556,6 +17558,7 @@ In 1980, the teams win % is more distributed closer to the median and above it w
 In 1980, since height is manly distributed closer to and above the median and many of the teams in 1980 have similar win %'s, those teams with heigher win percentages could be taller than the teams with lower win percentages. This would lead me to believe that height may have 
 more of an effect on win percentage in 1980 than in 2020. In 2020, the fact that the teams heights are closer together and win percentage
 is more evenly distrubted means that teams with heights closer to each other have a higher chance of having different win percentage.  
+<br>
 <hr>
 <br>
 <p><center></p>
@@ -19513,6 +19516,7 @@ My regression line in 2020 has a negative slope of -3.18168388 which means that 
 Both regression lines do not fit the data very well as the scatter plot points seem to be all over the place. 
 The actual slopes are irrelevant however, the fact that the 1980 slope is positive and the 2020 slope is negative does imply that taller teams did better and smaller teams did worse in 1980
 while smaller teams did better and taller teams did worse in 2020.
+<br>
 <hr>
 <br>
 <br>
@@ -21428,6 +21432,40 @@ z
 
 </div>
 
+</div>
+    
+ 
+</div>
+
+</div>
+
+</div>
+A lot of the smallest teams in 2020 had an above 45 win % based on the dots in top left corner in the 2020 graph and a 
+lot of the biggest teams in 1980 had an above 45 win % based on the top right corner in the 1980 graph. 
+Comparing these two plots, it seems that smaller teams did better in 2020 than in 1980 and bigger teams did better in 1980 than in 2020.  
+Using the logistic arrays for win percentage and their corresponding height arrays for the year 1980 and 2020, I can perform logistic regression. 
+<br>
+<br>
+I use sklearn to preform logistic regression using a logistic regression model and a Linear Discriminant analysis(LDA) model. The Logistic Regression Model makes prediction using
+maximum like hood estimaton while the LDA model is based on least sqaures estimation. Using the imports from sklearn, I can train and test the models
+with a 10-fold cross validation. There are 9 training sets and 1 testing set; this a good example of machine learning. I have to create the models and then fit them
+with my Height Values and their corresponding Win logistic regression arrays. The height arrays are reshaped to follow the correct matrix format. For the Logistic Model parameters, I used 
+newton-cg because this is good for small sets of data. For the LDA parameters, I chose the least sqaures solver. Both testing and training sets are also randomized. I then output the mean
+cross val score for both the models for the years 1980 and 2020 and logistic predictions for a small team and a big team using both of the models
+for the years 1980 and 2020. 
+<br>
+<a href="https://machinelearningmastery.com/linear-discriminant-analysis-for-machine-learning/" style="color:red;">LDA</a>
+<br>
+<a href="https://towardsdatascience.com/dont-sweat-the-solver-stuff-aea7cddc3451" style="color:red;">Logistic Regression</a>
+<br>
+<a href="https://scikit-learn.org/stable/modules/generated/sklearn.discriminant_analysis.LinearDiscriminantAnalysis.html" style="color:red;">Sklearn LDA</a>
+<br>
+<a href=" https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.KFold.html" style="color:red;">Sklearn KFold</a>
+<br>
+<a href="https://scikit-learn.org/stable/modules/cross_validation.html" style="color:red;">Sklearn KFold</a>
+<br>   
+</div>
+</div>
 </div>
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
