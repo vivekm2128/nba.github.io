@@ -17562,7 +17562,6 @@ is more evenly distrubted means that teams with heights closer to each other hav
 <hr>
 <br>
 <p><center></p>
-<hr>
 <p><h1>Linear Regrssion</h1>
 </center></p>    
 I have all the teams heights in my height1980 and height2020 arrays and their corresponding win percentages in my winpct1980 and winpct2020 arrays so make a 1980 and 2020 win % vs height plot 
@@ -19521,7 +19520,7 @@ while smaller teams did better and taller teams did worse in 2020.
 <br>
 <br>
 <p><center></p>
-<p><h1>Logistic Regression</h1>
+<p><h1>Logistic Regression Prep</h1>
 </center></p>
 Logistic Regression is a classification algorithm used to predict a binary outcome based on one or more independant variables. 
 It can be used to find trends and determine the strength of predictors. My independent variable is 
@@ -19530,6 +19529,7 @@ To do a logistic regression, I had to create two arrays, one for 1980 and one fo
 Each array is filled with 0s and 1s. I iterated through the arrays of win percentages for 1980 and 2020 and if the win percentage is above 45% 
 then I put a 1 in its corresponding logistic array and a 0 if it is below 45%. 
 I then plotted the height vs logistic win% for 1980 and 2020. 
+<br>
 </body>
 </div>
 </div>
@@ -21445,7 +21445,11 @@ lot of the biggest teams in 1980 had an above 45 win % based on the top right co
 Comparing these two plots, it seems that smaller teams did better in 2020 than in 1980 and bigger teams did better in 1980 than in 2020.  
 Using the logistic arrays for win percentage and their corresponding height arrays for the year 1980 and 2020, I can perform logistic regression. 
 <br>
+<hr>
 <br>
+<p><center></p>
+<p><h1>Logistic Regression Analysis</h1>
+</center></p>
 I use sklearn to preform logistic regression using a logistic regression model and a Linear Discriminant analysis(LDA) model. The Logistic Regression Model makes prediction using
 maximum like hood estimaton while the LDA model is based on least sqaures estimation. Using the imports from sklearn, I can train and test the models
 with a 10-fold cross validation. There are 9 training sets and 1 testing set; this a good example of machine learning. I have to create the models and then fit them
@@ -21602,6 +21606,24 @@ for the years 1980 and 2020.
 
 2020 LDA Big Teams Predictions: [0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0]
 </pre>
+</div>
+
+</div>
+
+</div>
+<br>
+The 1980 cross-val score for both models was higher than the 2020 cross-val score for both models. The Logistic Regression Model had a better cross-val score for the
+year 1980 than the LDA model for the year 1980 while the 2020 cross-val score was the same for both models. The fact the the Logistic Regression Model's cross val score for the 
+year 1980 is 15% higher than its cross-val score for the year 2020 leads me to believe that there is a stronger correlation between height and win percentage in the year 1980
+than in the year 2020. Unfortunately, neither of the models had a cross-val score for any year that was to high. This means that the correlation between height and
+win percentage is not very strong. Nevertheless, using the models to predict weather the win percentages for small and big teams supported my hypothesis. Both 1980 models 
+predicted that small teams would have a win % below 45% and that big teams would have a win % above 45%. Both the 2020 models predicted the exact opposite; that 
+predicted that small teams would have a win % above 45% and that big teams would have a win % below 45%    
+<br>
+<hr>
+</div>
+</div>
+</div>
 
     
     
