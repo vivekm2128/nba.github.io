@@ -14264,12 +14264,13 @@ by Vivek Mantha</h4></p>
 <p><h1>Introduction</h1>
 </center></p>
 <body><p>
-The game of professional basketball has changed greatly throughout the years. Throughout history it has been generalized that basketball is a game meant for people who are tall. However, the introduction of the 3 point line and rules to make the game less physical have made it easier for smaller players to excel. 3 pointers being worth more than 2s caused teams to shoot  more 3s and draft more players that shoot 3s. A player’s height then becomes less relevant if they are a good 3 point shooter. The 2016 MVP Steph Curry was only 6 foot 2; but, his ability to shoot the 3 and the fact that the league was less physical allowed him to excel despite his height. In the 1980s a player of his size would have a lot more trouble due to how physical the league was and how the game was played closer to the basket.  The objective of my project is to illustrate the difference between the effect of height on win percentage in the year 1980 and the year 2020. Has ‘small ball’ really taken over the nba? 
+The game of professional basketball has changed greatly throughout the years. Throughout history, it has been generalized that basketball is a game meant for people who are tall. However, the introduction of the 3 point line and rules to make the game less physical have made it easier for smaller players to excel. 3 pointers being worth more than 2 pointers caused teams to shoot more 3 pointers and draft more 3 point shooters. A player’s height then becomes less relevant if they are a good 3 point shooter. The 2016 MVP Steph Curry is only 6 foot 2; but, his ability to shoot the 3, and the fact that the league was less physical allowed him to excel despite his height. In 1980, a player of his size would have more trouble scoring due to how physical the league was, and how the game was played closer to the basket.  The objective of my project is to illustrate the differences between the effect of height on win percentage in the year 1980 and the year 2020. Has ‘small ball’ really taken over the NBA? 
+<br>
 <br>
 <hr>
 <center><h1>Scraping and Processing the Data</h1></center>
 <body><p>
-The first step is to get the average height of each NBA team along with their win percentage. I used the ‘requests get’ function on a url that contains the table with my desired data. The first parameter of the request get function is that url while the second parameter contains my headers to bypass any security preferences. When performing the get function a website expects a valid user agent which is why I have my mac user agent in my headers array. The request get function returns the data from the url in html format. Beautiful soup is then used to convert the data into a more readable format where the beautiful soup function ‘find’ is used with ‘prettify’ to locate the table. Prettify() allows us to use the ‘table’ keyword to find the table. I then use pandas read html function to convert this table into a pandas data frame. This process is repeated for every single team in the year 2020 and the year 1980. Unfortunately data on teams heights are in separate tables so I had to do a request for every team. This is not exactly the best practice and I would not have done it this way if I had all my data in one table. Here are some helpful links:
+The first step is to get the average height of each NBA team along with their win percentage. I used the ‘requests get’ function with a url that contains the table with my desired data. The first parameter of the request get function is that url while the second parameter contains my headers to bypass any security preferences. When performing a get request, a website expects a valid user agent which is why I have my mac user agent in my headers array. The request get function returns the data from the url in html format. Beautiful soup is then used to convert the data into a more readable format where the beautiful soup function ‘find’ is used with ‘prettify’ to locate the table. Prettify() allows us to use the ‘table’ keyword to find the table. I then use pandas read html function to convert this table into a pandas data frame. This process is repeated for every single team in the year 2020 and the year 1980. Alas, data on teams heights are in separate tables so I had to do a request for every team. This is not the best practice and I would not have done it this way if I had all my data in one table. Here are some helpful links:
 <br>
 <a href="https://nbviewer.jupyter.org/github/jvns/pandas-cookbook/blob/v0.1/cookbook/Chapter%201%20-%20Reading%20from%20a%20CSV.ipynb" style="color:red;">Pandas Scraping</a>
 <br>
@@ -14277,7 +14278,7 @@ The first step is to get the average height of each NBA team along with their wi
 <br>
 <a href="https://numpy.org/doc/stable/contents.html" style="color:red;">Numpy Documentation</a>
 <br>
-Once I have my data in a pandas data frame I can access the heights of any specific team by the column name ‘Ht’. For each team I convert the Heights into inches in a method which returns an array player heights in inches. I then use the numpy mean function to get the mean of that array and that gives me my x values aka the average height for each team. The y value is a team's win percentage which I input manually from basketball reference since there is no need to scrape this from any table. For every single team I append their average height to an array of my x values and their corresponding win percentage to an array of y values. I now have the average height for each team in 1980 and 2020 and a corresponding win percentage array for each team in 1980 and 2020.
+Once I have my data in a pandas data frame, I can access the heights of any specific team by the column name ‘Ht’. For each team I convert the Heights into inches in a method which returns an array player heights in inches. I then use the numpy mean function to get the mean of that array and that gives me my x values aka the average height for each team. The y value is a team's win percentage, which I input manually from basketball reference since there is no need to scrape this from any table. For every single team I append their average height to an array of my x values and their corresponding win percentage to an array of y values. I now have the average height for each team in 1980 and 2020 and a corresponding win percentage array for each team in 1980 and 2020.
 </body>
 </div>
 </div>
@@ -15061,11 +15062,13 @@ Once I have my data in a pandas data frame I can access the heights of any speci
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><center></p>
 <br>
+<br>
 <hr>
+<br>
 <p><h1>Exploring The Data</h1>
 </center></p>
 <body><p>
-Before analyzing the relationship between height and win percentage I illustrate the distributions of height and win percentage. I do this by making 2 violin plots. Seaborn is a Python data visualization library based on matplotlib. It makes it simple and easy to make a violin plot. I also use matplotlib's plt.figure to seperate the two plots. Here are some helpful links:
+Before analyzing the relationship between height and win percentage, I illustrate the distributions of height and win percentage. I do this by making 2 violin plots. Seaborn is a Python data visualization library based on matplotlib that makes it simple and easy to make a violin plot. I also use matplotlib's plt.figure to seperate the two plots. Here are some helpful links:
 <br>
 <a href="https://seaborn.pydata.org/generated/seaborn.violinplot.html" style="color:blue;">Seaborn Violin Plot</a>
 <br>
@@ -17547,24 +17550,27 @@ z
 <div class="text_cell_render border-box-sizing rendered_html">
 <body><p>
 Violin plots are a great way to visualize the distribution of data. Wider sections of the violin plot represent a higher probability that members of the population 
-will take on the given value while the thinner sections represent a lower probability. Here is a helpful link to interperate violin plots:
+will take on the given value, while the thinner sections represent a lower probability. Here is a helpful link to interperate violin plots:
 <br>
 <a href="https://mode.com/blog/violin-plot-examples/" style="color:red;">Violin Plot Interperatation</a>
 <br>
 The first violin plot shows the distribution of heights in the year 1980 and the year 2020. 
-Height is more evenly distributed in the year 1980 across the interquartile range, while in the year 2020 much more teams have heights closer to the median as represented by the wider section of the 2020 height violin plot. 
-Additionally, the tallest team in 2020 is taller than the tallest team in 1980 and the median height for 2020 is also slightly higher than the median height for 1980. Both teams outliars, represented by the two ends of each violin plot are around the same.
-In 1980, the teams win % is more distributed closer to the median and above it while in 2020 the win percentage is more evenly distributed. To add on, the min win % in 1980 is lower than the min win % in 2020 and the max win % in 1980 is greater than the max win % in 2020 as represented by the ends of the violin plots.
-In 1980, since height is manly distributed closer to and above the median and many of the teams in 1980 have similar win %'s, those teams with heigher win percentages could be taller than the teams with lower win percentages. This would lead me to believe that height may have 
+Height is more evenly distributed in the year 1980 across the interquartile range, while in the year 2020, much more teams have heights closer to the median as represented by the wider section of the 2020 height violin plot. 
+Additionally, the tallest team in 2020 is taller than the tallest team in 1980 and the median height for 2020 is also slightly higher than the median height for 1980. Both teams height outliars, represented by the two ends of each violin plot, are around the same.
+In 1980, the teams win % is more distributed closer to the median and above it, while in 2020 the win percentage is more evenly distributed. To add on, the minimum win % in 1980 is lower than the minimum win % in 2020 and the maximum win % in 1980 is greater than the maximum win % in 2020, as represented by the ends of the violin plots.
+In 1980, since height is evenly distributed and many of the teams in 1980 have win %s closer to and above the median, those teams with heigher win percentages could be taller than the teams with lower win percentages. This would lead me to believe that height may have 
 more of an effect on win percentage in 1980 than in 2020. In 2020, the fact that the teams heights are closer together and win percentage
-is more evenly distrubted means that teams with heights closer to each other have a higher chance of having different win percentage.  
+is more evenly distrubted means that teams with heights closer to each other have a higher chance of having different win percentage. My hypothesis is that 
+height is positively correlated with win % in 1980, height is negatively correlated with win % in 2020, and the correlation between height and win % is stronger 
+in 1980 than in 2020.
+<br>
 <br>
 <hr>
 <br>
 <p><center></p>
 <p><h1>Linear Regrssion</h1>
 </center></p>    
-I have all the teams heights in my height1980 and height2020 arrays and their corresponding win percentages in my winpct1980 and winpct2020 arrays so make a 1980 and 2020 win % vs height plot 
+I have all the teams heights in my height1980 and height2020 arrays, and their corresponding win percentages in my winpct1980 and winpct2020 arrays to make a 1980 and 2020 win % vs height plot 
 and add a regression line to it. 
 Data is just numbers until you find a way to derive meaning from it. 
 One way to do this is through linear regression. Ordinary Least Squares(OLS) is one way to get a linear regression line from a set of points. OLS can estimate 
@@ -17575,7 +17581,7 @@ actual observed value. This link can help:
 <br>
 I use np linalg solve to find my a and b value where the gradient equals zero are minima. I have to change both my arrays to 2D's to get the correct matrix form.
 I also concatenate ones using numpy so that I can get a b value using np linalg solve. Once I have my a and b value for 1980 and 2020 I use matplotlib's plt to make
-scatter plots and put my regression lines for each year on those scatter plots. 
+scatter plots for 1980 and 2020 and add my regression lines to the two plots.
 </body>
 </div>
 </div>
@@ -17585,7 +17591,6 @@ scatter plots and put my regression lines for each year on those scatter plots.
 <div class="prompt input_prompt">In&nbsp;[1]:</div>
 <div class="inner_cell">
     <div class="input_area">
-
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -19513,9 +19518,7 @@ z
 My regression line in 1980 has a positive slope of 1.89321239 which means that if height goes up 1 inch in 1980, win percentage increases by 1.89321239. 
 My regression line in 2020 has a negative slope of -3.18168388 which means that if height goes up 1 inch, win percentage decreases by -3.18168388. 
 Both regression lines do not fit the data very well as the scatter plot points seem to be all over the place. 
-The actual slopes are irrelevant however, the fact that the 1980 slope is positive and the 2020 slope is negative does imply that taller teams did better and smaller teams did worse in 1980
-while smaller teams did better and taller teams did worse in 2020.
-<br>
+The actual value of the slopes are irrelevant. The fact that the 1980 slope is positive and the 2020 slope is negative supports my hypothesis. 
 <hr>
 <br>
 <br>
@@ -19523,12 +19526,13 @@ while smaller teams did better and taller teams did worse in 2020.
 <p><h1>Logistic Regression Prep</h1>
 </center></p>
 Logistic Regression is a classification algorithm used to predict a binary outcome based on one or more independant variables. 
-It can be used to find trends and determine the strength of predictors. My independent variable is 
-the average height of each team and my binary outcome is 0 or 1. 0 to represent teams with a below 45 win % and 1 to represent teams with an above 45 win %.
-To do a logistic regression, I had to create two arrays, one for 1980 and one for 2020. 
-Each array is filled with 0s and 1s. I iterated through the arrays of win percentages for 1980 and 2020 and if the win percentage is above 45% 
-then I put a 1 in its corresponding logistic array and a 0 if it is below 45%. 
-I then plotted the height vs logistic win% for 1980 and 2020. 
+It can be used to find trends, and to determine the strength of predictors. My independent variable is 
+the average height of each team, and my binary outcome is 0 or 1: 0 to represent teams with a below 45 win % and 1 to represent teams with an above 45 win %.
+To do a logistic regression, I had to create two logistic arrays, one for 1980 win percentages and one for 2020 win percentage. 
+Each array is filled with 0s and 1s. I iterated through the arrays of win percentages for 1980 and 2020; if the win percentage is above 45% 
+then I put a 1 in its corresponding logistic array and a 0 otherwise. 
+I then plotted the logistic win% vs height for 1980 and 2020. 
+<br>
 <br>
 </body>
 </div>
@@ -21443,7 +21447,7 @@ z
 A lot of the smallest teams in 2020 had an above 45 win % based on the dots in top left corner in the 2020 graph and a 
 lot of the biggest teams in 1980 had an above 45 win % based on the top right corner in the 1980 graph. 
 Comparing these two plots, it seems that smaller teams did better in 2020 than in 1980 and bigger teams did better in 1980 than in 2020.  
-Using the logistic arrays for win percentage and their corresponding height arrays for the year 1980 and 2020, I can perform logistic regression. 
+Using the logistic arrays for win percentage, and their corresponding height arrays for the year 1980 and 2020, I can perform logistic regression. 
 <br>
 <br>
 <hr>
@@ -21451,12 +21455,12 @@ Using the logistic arrays for win percentage and their corresponding height arra
 <p><center></p>
 <p><h1>Logistic Regression Analysis</h1>
 </center></p>
-I use sklearn to preform logistic regression using a logistic regression model and a Linear Discriminant analysis(LDA) model. The Logistic Regression Model makes prediction using
-maximum like hood estimaton while the LDA model is based on least sqaures estimation. Using the imports from sklearn, I can train and test the models
+I use sklearn to preform logistic regression using a Logistic Regression model and a Linear Discriminant analysis(LDA) model. The Logistic Regression Model makes predictions using
+maximum like hood estimaton, while the LDA model is based on least sqaures estimation. Using the imports from sklearn, I can train and test the models
 with a 10-fold cross validation. There are 9 training sets and 1 testing set; this a good example of machine learning. I have to create the models and then fit them
-with my Height Values and their corresponding Win logistic regression arrays. The height arrays are reshaped to follow the correct matrix format. For the Logistic Model parameters, I used 
+with my reshaped Height Values to follow the correct matrix format, and their corresponding Win% logistic regression arrays. For the Logistic Model parameters, I used 
 newton-cg because this is good for small sets of data. For the LDA parameters, I chose the least sqaures solver. Both testing and training sets are also randomized. I then output the mean
-cross val score for both the models for the years 1980 and 2020 and logistic predictions for a small team and a big team using both of the models
+cross val score for both the models for the years 1980 and 2020 along with logistic predictions for a small team and a big team using both of the models
 for the years 1980 and 2020. 
 <br>
 <a href="https://machinelearningmastery.com/linear-discriminant-analysis-for-machine-learning/" style="color:red;">LDA</a>
@@ -21632,7 +21636,7 @@ predicted that small teams would have a win % above 45% and that big teams would
 <p><center></p>
 <p><img src="https://qph.fs.quoracdn.net/main-qimg-27a8556056750f116678c059e39e7e5b" alt="Drawing"style="height: 300px;" style="width: 150px;"></center></p>
 <p><center></p>
-The Logistic Regression analysis illustrated that height defined a team's success more in 1980 than in 2020. In 2020, there was not as much of a correlation between height and win percentage. This his makes sense because of how the game has changed. Jump shots and 3 pointers have taken over the game where as in 1980 more players tried to score closer to the basket. Players who are taller tend to be better at scoring closer to the basket than smaller players. This is why height seems to have a stronger effect on win percentage in 1980 than in 2020. The 2020 Logistic Regression model had a smaller score than the 1980 model because in 2020 players of all heights can shoot jump shots and 3 pointers; making height less relevant in 2020. All in all, it seems that small ball hasn't exactly taken over; but, tall ball has diminished.
+The Linear Regression line showed a positive correlation between height and win% in 1980 and a negative one in 2020. The Logistic Regression analysis illustrated that height defined a team's success more in 1980 than in 2020 and showed the same correlations as the Linear Regression Model. The cross-val score of .52 for the 2020 Logistic Models lead me to believe that the correlation between height and win% in 2020 is to small to fully accept my hypothesis. Thus, I accept 2/3 parts of my initial hypothesis; I accept that height is negatively correlated with win% in 1980 and that the correlation between height and win% is stronger in 1980 than in 2020. In 2020, there was not as much of a correlation between height and win percentage because of how the game has changed. Jump shots and 3 pointers have taken over the game where as in 1980 more players tried to score closer to the basket. Players who are taller tend to be better at scoring closer to the basket than smaller players. This is why height seems to have a stronger effect on win percentage in 1980 than in 2020. The 2020 Logistic Regression model had a smaller score than the 1980 model because in 2020 players of all heights can shoot jump shots and 3 pointers; making height less relevant in 2020. All in all, it seems that small ball hasn't exactly taken over; but, tall ball has diminished.
 <br>
 <hr>
 </div>
