@@ -15060,7 +15060,7 @@ Once I have my data in a pandas data frame I can access the heights of any speci
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><center></p>
 <hr>
-<p><h1>Exploring The Data Setup</h1>
+<p><h1>Exploring The Data</h1>
 </center></p>
 <body><p>
 Before analyzing the relationship between height and win percentage I illustrate the distributions of height and win percentage. I do this by making 2 violin plots. Seaborn is a Python data visualization library based on matplotlib. It makes it simple and easy to make a violin plot. I also use matplotlib's plt.figure to seperate the two plots. Here are some helpful links:
@@ -17543,9 +17543,6 @@ z
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><center></p>
-<p><h1>Exploring The Data Analysis</h1>
-</center></p>
 <body><p>
 Violin plots are a great way to visualize the distribution of data. Wider sections of the violin plot represent a higher probability that members of the population 
 will take on the given value while the thinner sections represent a lower probability. Here is a helpful link to interperate violin plots:
@@ -17563,7 +17560,7 @@ is more evenly distrubted means that teams with heights closer to each other hav
 <br>
 <p><center></p>
 <hr>
-<p><h1>Linear Regrssion Setup</h1>
+<p><h1>Linear Regrssion</h1>
 </center></p>    
 I have all the teams heights in my height1980 and height2020 arrays and their corresponding win percentages in my winpct1980 and winpct2020 arrays so make a 1980 and 2020 win % vs height plot 
 and add a regression line to it. 
@@ -19511,15 +19508,24 @@ z
 </div>
 
 </div>
-<p><center></p>
-<p><h1>Linear Regrssion Analysis</h1>
-</center></p>    
 My regression line in 1980 has a positive slope of 1.89321239 which means that if height goes up 1 inch in 1980, win percentage increases by 1.89321239. 
 My regression line in 2020 has a negative slope of -3.18168388 which means that if height goes up 1 inch, win percentage decreases by -3.18168388. 
 Both regression lines do not fit the data very well as the scatter plot points seem to be all over the place. 
 The actual slopes are irrelevant however, the fact that the 1980 slope is positive and the 2020 slope is negative does imply that taller teams did better and smaller teams did worse in 1980
 while smaller teams did better and taller teams did worse in 2020.
 <hr>
+<br>
+<br>
+<p><center></p>
+<p><h1>Logistic Regression</h1>
+</center></p>
+Logistic Regression is a classification algorithm used to predict a binary outcome based on one or more independant variables. 
+It can be used to find trends and determine the strength of predictors. My independent variable is 
+the average height of each team and my binary outcome is 0 or 1. 0 to represent teams with a below 45 win % and 1 to represent teams with an above 45 win %.
+To do a logistic regression, I had to create two arrays, one for 1980 and one for 2020. 
+Each array is filled with 0s and 1s. I iterated through the arrays of win percentages for 1980 and 2020 and if the win percentage is above 45% 
+then I put a 1 in its corresponding logistic array and a 0 if it is below 45%. 
+I then plotted the height vs logistic win% for 1980 and 2020. 
 </body>
 </div>
 </div>
