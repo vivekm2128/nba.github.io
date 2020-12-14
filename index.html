@@ -14277,7 +14277,6 @@ The first step is to get the average height of each NBA team along with their wi
 <a href="https://numpy.org/doc/stable/contents.html" style="color:red;">Numpy Documentation</a>
 <br>
 Once I have my data in a pandas data frame I can access the heights of any specific team by the column name ‘Ht’. For each team I convert the Heights into inches in a method which returns an array player heights in inches. I then use the numpy mean function to get the mean of that array and that gives me my x values aka the average height for each team. The y value is a team's win percentage which I input manually from basketball reference since there is no need to scrape this from any table. For every single team I append their average height to an array of my x values and their corresponding win percentage to an array of y values. I now have the average height for each team in 1980 and 2020 and a corresponding win percentage array for each team in 1980 and 2020.
-<hr>
 </body>
 </div>
 </div>
@@ -15069,7 +15068,6 @@ Before analyzing the relationship between height and win percentage I illustrate
 <a href="https://seaborn.pydata.org/generated/seaborn.violinplot.html" style="color:blue;">Seaborn Violin Plot</a>
 <br>
 <a href="https://www.kite.com/python/answers/how-to-show-two-figures-at-once-in-matplotlib-in-python"  style="color:blue;">Multiple Plots</a>
-<hr>
 </body>
 </div>
 </div>
@@ -17546,7 +17544,6 @@ z
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <p><center></p>
-<hr>
 <p><h1>Exploring The Data Analysis</h1>
 </center></p>
 <body><p>
@@ -17580,7 +17577,6 @@ actual observed value. This link can help:
 I use np linalg solve to find my a and b value where the gradient equals zero are minima. I have to change both my arrays to 2D's to get the correct matrix form.
 I also concatenate ones using numpy so that I can get a b value using np linalg solve. Once I have my a and b value for 1980 and 2020 I use matplotlib's plt to make
 scatter plots and put my regression lines for each year on those scatter plots. 
-<hr>
 </body>
 </div>
 </div>
@@ -19514,6 +19510,19 @@ z
 
 </div>
 
+</div>
+<p><center></p>
+<p><h1>Linear Regrssion Analysis</h1>
+</center></p>    
+My regression line in 1980 has a positive slope of 1.89321239 which means that if height goes up 1 inch in 1980, win percentage increases by 1.89321239. 
+My regression line in 2020 has a negative slope of -3.18168388 which means that if height goes up 1 inch, win percentage decreases by -3.18168388. 
+Both regression lines do not fit the data very well as the scatter plot points seem to be all over the place. 
+The actual slopes are irrelevant however, the fact that the 1980 slope is positive and the 2020 slope is negative does imply that taller teams did better and smaller teams did worse in 1980
+while smaller teams did better and taller teams did worse in 2020.
+<hr>
+</body>
+</div>
+</div>
 </div>
 
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
