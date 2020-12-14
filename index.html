@@ -17560,15 +17560,27 @@ Additionally, the tallest team in 2020 is taller than the tallest team in 1980 a
 In 1980, the teams win % is more distributed closer to the median and above it, while in 2020 the win percentage is more evenly distributed. To add on, the minimum win % in 1980 is lower than the minimum win % in 2020 and the maximum win % in 1980 is greater than the maximum win % in 2020, as represented by the ends of the violin plots.
 In 1980, since height is evenly distributed and many of the teams in 1980 have win %s closer to and above the median, those teams with heigher win percentages could be taller than the teams with lower win percentages. This would lead me to believe that height may have 
 more of an effect on win percentage in 1980 than in 2020. In 2020, the fact that the teams heights are closer together and win percentage
-is more evenly distrubted means that teams with heights closer to each other have a higher chance of having different win percentage. My hypothesis is that 
+is more evenly distrubted means that teams with heights closer to each other have a higher chance of having different win percentage. 
+<br>
+<br>
+<hr>
+<br>
+<br>
+<p><center></p>
+<p><h1>Hypothesis</h1>
+</center></p>
+My hypothesis is that 
 height is positively correlated with win % in 1980, height is negatively correlated with win % in 2020, and the correlation between height and win % is stronger 
 in 1980 than in 2020.
+<p><center></p>
+<p><img src="https://i.ytimg.com/vi/N0xxGHLP81c/maxresdefault.jpg" alt="Drawing"style="height: 50px;" style="width: 100px;"></p>
+</center></p>
 <br>
 <br>
 <hr>
 <br>
 <p><center></p>
-<p><h1>Linear Regrssion</h1>
+<p><h1>Linear Regression</h1>
 </center></p>    
 I have all the teams heights in my height1980 and height2020 arrays, and their corresponding win percentages in my winpct1980 and winpct2020 arrays to make a 1980 and 2020 win % vs height plot 
 and add a regression line to it. 
@@ -21633,8 +21645,7 @@ predicted that small teams would have a win % above 45% and that big teams would
 <br>
 <p><center></p>
 <p><h1>Conlusion</h1>
-<p><center></p>
-<p><img src="https://qph.fs.quoracdn.net/main-qimg-27a8556056750f116678c059e39e7e5b" alt="Drawing"style="height: 300px;" style="width: 150px;"></center></p>
+<p><img src="https://qph.fs.quoracdn.net/main-qimg-27a8556056750f116678c059e39e7e5b" alt="Drawing"style="height: 300px;" style="width: 150px;"></p>
 <p><center></p>
 The Linear Regression line showed a positive correlation between height and win% in 1980 and a negative one in 2020. The Logistic Regression analysis illustrated that height defined a team's success more in 1980 than in 2020 and showed the same correlations as the Linear Regression Model. The cross-val score of .52 for the 2020 Logistic Models lead me to believe that the correlation between height and win% in 2020 is to small to fully accept my hypothesis. Thus, I accept 2/3 parts of my initial hypothesis; I accept that height is negatively correlated with win% in 1980 and that the correlation between height and win% is stronger in 1980 than in 2020. In 2020, there was not as much of a correlation between height and win percentage because of how the game has changed. Jump shots and 3 pointers have taken over the game where as in 1980 more players tried to score closer to the basket. Players who are taller tend to be better at scoring closer to the basket than smaller players. This is why height seems to have a stronger effect on win percentage in 1980 than in 2020. The 2020 Logistic Regression model had a smaller score than the 1980 model because in 2020 players of all heights can shoot jump shots and 3 pointers; making height less relevant in 2020. All in all, it seems that small ball hasn't exactly taken over; but, tall ball has diminished.
 <br>
